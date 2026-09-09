@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CineFind</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🎬 CineFind
+        </div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#trending">Trending</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#about">About</a>
+        </div>
+
+        <div class="nav-buttons">
+
+            <button id="theme-btn" class="icon-btn">
+                🌙
+            </button>
+
+            <button id="profile-btn" class="profile-btn">
+                👤 Profile
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= PROFILE PANEL ================= -->
+
+    <div id="profile-panel" class="profile-panel">
+
+        <div class="profile-header">
+            <h2>Your Profile</h2>
+
+            <button id="close-profile">
+                ✕
+            </button>
+        </div>
+
+        <div class="profile-icon">
+            👤
+        </div>
+
+        <h3>Movie Lover</h3>
+
+        <p>Welcome to CineFind!</p>
+
+        <div class="profile-stats">
+
+            <div>
+                <strong>12</strong>
+                <span>Reviews</span>
+            </div>
+
+            <div>
+                <strong>24</strong>
+                <span>Movies</span>
+            </div>
+
+            <div>
+                <strong>4.5</strong>
+                <span>Avg Rating</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= HOME ================= -->
+
+    <main id="home-page">
+
+        <!-- HERO -->
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <h1>
+                    Discover your next
+                    <span>favorite movie.</span>
+                </h1>
+
+                <p>
+                    Search movies, discover hidden gems,
+                    and see what other movie lovers think.
+                </p>
+
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="search-input"
+                        placeholder="Search for a movie..."
+                    >
+
+                    <button id="search-btn">
+                        🔍 Search
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SEARCH RESULTS -->
+
+        <section id="search-results-section" class="section hidden">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Search Results</h2>
+                    <p>Movies matching your search</p>
+                </div>
+
+            </div>
+
+            <div id="search-results" class="movie-grid"></div>
+
+        </section>
+
+
+        <!-- ================= TRENDING ================= -->
+
+        <section class="section" id="trending">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Trending Now</h2>
+                    <p>What everyone is watching</p>
+                </div>
+
+                <button id="trending-see-all" class="see-all-btn">
+                    See All →
+                </button>
+
+            </div>
+
+
+            <div class="trending-grid">
+
+                <div class="trending-card">
+
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg"
+                        alt="Oppenheimer"
+                        onerror="posterFallback(this)"
+                    >
+
+                    <div class="movie-info">
+
+                        <h3>Oppenheimer</h3>
+
+                        <p>2023 • ⭐ 8.6</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="trending-card">
+
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg"
+                        alt="Dune Part Two"
+                        onerror="posterFallback(this)"
+                    >
+
+                    <div class="movie-info">
+
+                        <h3>Dune: Part Two</h3>
+
+                        <p>2024 • ⭐ 8.6</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="trending-card">
+
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg"
+                        alt="Joker"
+                        onerror="posterFallback(this)"
+                    >
+
+                    <div class="movie-info">
+
+                        <h3>Joker</h3>
+
+                        <p>2019 • ⭐ 8.1</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="trending-card">
+
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg"
+                        alt="Avengers Endgame"
+                        onerror="posterFallback(this)"
+                    >
+
+                    <div class="movie-info">
+
+                        <h3>Avengers: Endgame</h3>
+
+                        <p>2019 • ⭐ 8.2</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= POPULAR SEARCHES ================= -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Popular Searches</h2>
+                    <p>Search what people are looking for</p>
+                </div>
+
+            </div>
+
+
+            <div class="popular-tags">
+
+                <button class="movie-tag">Interstellar</button>
+
+                <button class="movie-tag">Inception</button>
+
+                <button class="movie-tag">The Dark Knight</button>
+
+                <button class="movie-tag">The Matrix</button>
+
+                <button class="movie-tag">Fight Club</button>
+
+                <button class="movie-tag">Gladiator</button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TOP RATED ================= -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Top Rated</h2>
+                    <p>Movies worth watching</p>
+                </div>
+
+                <button id="top-see-all" class="see-all-btn">
+                    See All →
+                </button>
+
+            </div>
+
+
+            <div class="movie-grid">
+
+                <div class="movie-card">
+
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg"
+                        alt="Shawshank Redemption"
+                        onerror="posterFallback(this)"
+                    >
+
+                    <div class="movie-card-content">
+
+                        <h3>The Shawshank Redemption</h3>
+
+                        <p>1994</p>
+
+                        <span>⭐ 9.3</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="movie-card">
+
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg"
+                        alt="The Godfather"
+                        onerror="posterFallback(this)"
+                    >
+
+                    <div class="movie-card-content">
+
+                        <h3>The Godfather</h3>
+
+                        <p>1972</p>
+
+                        <span>⭐ 9.2</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="movie-card">
+
+                    <img
+                        src="https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg"
+                        alt="The Dark Knight"
+                        onerror="posterFallback(this)"
+                    >
+
+                    <div class="movie-card-content">
+
+                        <h3>The Dark Knight</h3>
+
+                        <p>2008</p>
+
+                        <span>⭐ 9.0</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= REVIEWS ================= -->
+
+        <section class="section" id="reviews">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Latest Reviews</h2>
+                    <p>What movie lovers are saying</p>
+                </div>
+
+            </div>
+
+
+            <div id="review-container" class="reviews-grid">
+
+                <div class="review-card">
+
+                    <div class="review-top">
+
+                        <div class="review-user">
+                            👤
+                        </div>
+
+                        <div>
+                            <h3>Rahul</h3>
+                            <span>★★★★★</span>
+                        </div>
+
+                    </div>
+
+                    <h4>Interstellar</h4>
+
+                    <p>
+                        One of the most beautiful sci-fi movies
+                        I have ever watched. The visuals and music
+                        are absolutely incredible.
+                    </p>
+
+                    <button class="helpful-btn">
+                        👍 Helpful <span>12</span>
+                    </button>
+
+                </div>
+
+
+                <div class="review-card">
+
+                    <div class="review-top">
+
+                        <div class="review-user">
+                            👤
+                        </div>
+
+                        <div>
+                            <h3>Arjun</h3>
+                            <span>★★★★★</span>
+                        </div>
+
+                    </div>
+
+                    <h4>The Dark Knight</h4>
+
+                    <p>
+                        Amazing performances, great screenplay,
+                        and one of the best comic-book movies ever made.
+                    </p>
+
+                    <button class="helpful-btn">
+                        👍 Helpful <span>18</span>
+                    </button>
+
+                </div>
+
+
+                <div class="review-card">
+
+                    <div class="review-top">
+
+                        <div class="review-user">
+                            👤
+                        </div>
+
+                        <div>
+                            <h3>Priya</h3>
+                            <span>★★★★☆</span>
+                        </div>
+
+                    </div>
+
+                    <h4>Oppenheimer</h4>
+
+                    <p>
+                        Brilliant filmmaking and performances.
+                        A slow burn but completely worth watching.
+                    </p>
+
+                    <button class="helpful-btn">
+                        👍 Helpful <span>9</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ADD REVIEW ================= -->
+
+        <section class="section review-section">
+
+            <div class="review-form-container">
+
+                <h2>Write a Review</h2>
+
+                <p>
+                    Share your thoughts about a movie.
+                </p>
+
+
+                <form id="review-form">
+
+                    <input
+                        type="text"
+                        id="review-name"
+                        placeholder="Your name"
+                        required
+                    >
+
+
+                    <input
+                        type="text"
+                        id="review-movie"
+                        placeholder="Movie name"
+                        required
+                    >
+
+
+                    <select id="review-rating" required>
+
+                        <option value="">
+                            Select rating
+                        </option>
+
+                        <option value="5">
+                            ★★★★★
+                        </option>
+
+                        <option value="4">
+                            ★★★★☆
+                        </option>
+
+                        <option value="3">
+                            ★★★☆☆
+                        </option>
+
+                        <option value="2">
+                            ★★☆☆☆
+                        </option>
+
+                        <option value="1">
+                            ★☆☆☆☆
+                        </option>
+
+                    </select>
+
+
+                    <textarea
+                        id="review-text"
+                        placeholder="Write your review..."
+                        required
+                    ></textarea>
+
+
+                    <button type="submit">
+                        Submit Review
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section class="section about-section" id="about">
+
+            <h2>About CineFind</h2>
+
+            <p>
+                CineFind is a simple movie discovery platform where
+                you can explore movies, check ratings and read reviews
+                from other movie lovers.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= ALL MOVIES PAGE ================= -->
+
+    <main id="all-movies-page" class="hidden">
+
+        <section class="section">
+
+            <div class="all-movies-header">
+
+                <button id="back-home">
+                    ← Back Home
+                </button>
+
+                <div>
+
+                    <h1>All Movies</h1>
+
+                    <p>
+                        Explore our movie collection
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div id="all-movies-container" class="all-movies-grid"></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <h2>🎬 CineFind</h2>
+
+        <p>
+            Discover. Watch. Review.
+        </p>
+
+        <p class="copyright">
+            © 2026 CineFind
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
